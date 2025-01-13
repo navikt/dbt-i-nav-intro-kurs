@@ -14,7 +14,7 @@
 pip install -r requirements.txt
 ```
 
-### Initier et nytt prosjekt
+### UTGÅR: Initier et nytt prosjekt
 
 ```shell
 dbt init
@@ -41,7 +41,7 @@ Which database would you like to use?
 Enter a number: 1
 ```
 
-### Bygg prosjektet
+## Ditt første bygg av prosjektet
 
 Gå inn i prosjektmappen
 
@@ -95,3 +95,37 @@ Når vi bygget prosjektet fikk vi en test som feilet.
 10:23:46  Done. PASS=2 WARN=0 ERROR=1 SKIP=3 TOTAL=6
 ```
 
+SQLen til testen som feiler finner du etter `compiled code at ***`. ref: `target/compiled/intro_kurs/models/example/schema.yml/not_null_my_first_dbt_model_id.sql`. For å se resultatet av en test eller modell kan du bruke `dbt show -s <navn>`.
+
+```shell
+dbt show -s not_null_my_first_dbt_model_id
+```
+
+Output:
+
+```shell
+...
+Previewing node 'not_null_my_first_dbt_model_id':
+| id |
+| -- |
+|    |
+```
+
+Som du kan så finnes det her en rad hvor `id` er *null*. For å se resultatet av modellen kan vi igjen bruke `dbt show`
+
+```shell
+dbt show -s my_first_dbt_model
+```
+
+Output:
+
+```shell
+...
+Previewing node 'my_first_dbt_model':
+| id |
+| -- |
+|  1 |
+|    |
+```
+
+Igjen dette verifiserer at her finnes det en rad hvor `id=1` og en rad hvor `id=null (--)`. La oss nå fikse problemet i modellen [my_first_dbt_model](intro_kurs/models/example/my_first_dbt_model.sql).

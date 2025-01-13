@@ -1,0 +1,19 @@
+```
+pip install -r requirements.txt
+```
+
+```
+cd intro_kurs
+```
+
+```
+dbt build
+```
+
+```
+dbt show -s not_null_my_first_dbt_model_id
+```
+
+```
+dbt show -s my_first_dbt_model
+```

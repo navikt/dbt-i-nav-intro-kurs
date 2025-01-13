@@ -2,3 +2,4 @@
 .mypy_cache
 logs
 .DS_Store
+*.duckdb
