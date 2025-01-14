@@ -21,7 +21,7 @@
     "python.testing.pytestEnabled": true,
     "dbt.queryLimit": 500,
     "files.associations": {
-        "*.sql": "jinja-sql"
+        "intro_kurs/models/*.sql": "jinja-sql"
     },
     "[jinja-sql]": {
         "editor.defaultFormatter": "innoverio.vscode-dbt-power-user",
