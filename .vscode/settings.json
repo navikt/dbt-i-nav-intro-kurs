@@ -33,4 +33,7 @@
     "dbt.enableNewLineagePanel": true,
     "dbt.perspectiveTheme": "Vintage",
     "sqltools.useNodeRuntime": true,
+    "dbt.enableCollaboration": false,
+    "python.createEnvironment.trigger": "off",
+    "extensions.ignoreRecommendations": true,
 }
