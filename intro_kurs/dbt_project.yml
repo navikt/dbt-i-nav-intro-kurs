@@ -5,6 +5,9 @@
 name: 'intro_kurs'
 version: '1.0.0'
 
+flags:
+  send_anonymous_usage_stats: false
+
 # This setting configures which "profile" dbt uses for this project.
 profile: 'intro_kurs'
 

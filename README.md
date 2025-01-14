@@ -1,44 +1,9 @@
 # Intro til dbt
 
-
 ## Installasjon
 
-### Forutsetninger
-
-* python 3
-* git
-
-### dbt
-
 ```shell
-pip install -r requirements.txt
-```
-
-### UTGÅR: Initier et nytt prosjekt
-
-```shell
-dbt init
-```
-
-Gi prosjektet et navn. F.eks: `intro_kurs`
-
-```shell
-(.venv) dbt-i-nav-intro % dbt init
-10:15:48  Running with dbt=1.9.1
-Enter a name for your project (letters, digits, underscore): intro_kurs
-```
-
-Velg `1` (duckdb) som database.
-
-```shell
-...
-10:18:32  Setting up your profile.
-Which database would you like to use?
-[1] duckdb
-
-(Don't see the one you want? https://docs.getdbt.com/docs/available-adapters)
-
-Enter a number: 1
+python -m venv .venv && source /workspaces/dbt-i-nav-intro-kurs/.venv/bin/activate &&  pip install -r /workspaces/dbt-i-nav-intro-kurs/requirements.txt
 ```
 
 ## Ditt første bygg av prosjektet

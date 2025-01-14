@@ -2,12 +2,13 @@ intro_kurs:
   outputs:
     dev:
       type: duckdb
-      path: dev.duckdb
+      path: /workspaces/dbt-i-nav-intro-kurs/dev.duckdb
       threads: 1
 
     prod:
       type: duckdb
-      path: prod.duckdb
+      path: /workspaces/dbt-i-nav-intro-kurs/prod.duckdb
       threads: 4
 
   target: dev
+  

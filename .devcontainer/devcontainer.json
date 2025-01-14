@@ -1,12 +1,15 @@
 {
     "image": "mcr.microsoft.com/devcontainers/universal:2",
     "customizations": {
-        "extensions": [
-            "innoverio.vscode-dbt-power-user",
-            "ms-python.isort",
-            "ms-python.black-formatter",
-            "ms-python.python",
-            "redhat.vscode-yaml"
-        ]
+        "vscode": {
+            "extensions": [
+                "RandomFractalsInc.duckdb-sql-tools",
+                "innoverio.vscode-dbt-power-user",
+                "ms-python.isort",
+                "ms-python.black-formatter",
+                "ms-python.python",
+                "redhat.vscode-yaml"
+            ]
+        }
     }
 }

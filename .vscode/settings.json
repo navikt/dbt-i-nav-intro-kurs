@@ -32,4 +32,5 @@
     },
     "dbt.enableNewLineagePanel": true,
     "dbt.perspectiveTheme": "Vintage",
+    "sqltools.useNodeRuntime": true,
 }
