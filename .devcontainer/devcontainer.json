@@ -1,2 +1,12 @@
-{"image":"mcr.microsoft.com/devcontainers/universal:2"
+{
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "customizations": {
+        "extensions": [
+            "innoverio.vscode-dbt-power-user",
+            "ms-python.isort",
+            "ms-python.black-formatter",
+            "ms-python.python",
+            "redhat.vscode-yaml"
+        ]
+    }
 }
