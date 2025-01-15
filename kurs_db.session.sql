@@ -5,4 +5,5 @@ CREATE TABLE payments AS SELECT * FROM read_csv_auto('/workspaces/dbt-i-nav-intr
 
 CREATE TABLE customers AS SELECT * FROM read_csv_auto('/workspaces/dbt-i-nav-intro-kurs/intro_kurs/data/customers.csv');
 
-commit;
+select * from orders;
+
