@@ -11,5 +11,6 @@
                 "redhat.vscode-yaml"
             ]
         }
-    }
+    },
+    "postCreateCommand": "bash .devcontainer/post-create.sh"
 }
