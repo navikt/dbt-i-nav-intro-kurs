@@ -37,4 +37,13 @@
     "python.createEnvironment.trigger": "off",
     "extensions.ignoreRecommendations": true,
     "redhat.telemetry.enabled": false,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "DuckDB",
+            "name": "kurs_db",
+            "database": "dev.duckdb"
+        }
+    ],
+    "dbcode.connections": [],
 }
