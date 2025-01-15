@@ -36,4 +36,5 @@
     "dbt.enableCollaboration": false,
     "python.createEnvironment.trigger": "off",
     "extensions.ignoreRecommendations": true,
+    "redhat.telemetry.enabled": false,
 }

@@ -11,5 +11,6 @@
                 "redhat.vscode-yaml"
             ]
         }
-    }
+    },
+    "postCreateCommand": "pipx install dbt-core dbt-duckdb"
 }
