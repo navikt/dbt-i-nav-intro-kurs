@@ -7,3 +7,6 @@ CREATE TABLE customers AS SELECT * FROM read_csv_auto('/workspaces/dbt-i-nav-int
 
 select * from orders;
 
+drop view stg_customers;
+COMMIT;
+
