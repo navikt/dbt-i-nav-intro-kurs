@@ -37,4 +37,12 @@
     "python.createEnvironment.trigger": "off",
     "extensions.ignoreRecommendations": true,
     "redhat.telemetry.enabled": false,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "DuckDB",
+            "name": "da",
+            "database": "dev.duckdb"
+        }
+    ],
 }
