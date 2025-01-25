@@ -2,4 +2,4 @@
 
 pip3 install --user -r requirements.txt
 
-npm install --prefix ~/.local/share/vscode-sqltools/ duckdb-async@0.10.2
+npm install --prefix ~/.local/share/vscode-sqltools/ duckdb-async@1.0.0

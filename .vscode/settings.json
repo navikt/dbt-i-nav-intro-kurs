@@ -39,10 +39,11 @@
     "redhat.telemetry.enabled": false,
     "sqltools.connections": [
         {
+            "name": "DuckDB",
+            "accessMode": "Read Only",
             "previewLimit": 50,
             "driver": "DuckDB",
-            "name": "da",
-            "database": "dev.duckdb"
+            "databaseFilePath": "dev.duckdb"
         }
     ],
 }
