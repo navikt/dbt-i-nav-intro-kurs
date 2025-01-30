@@ -1,25 +1,5 @@
 # Intro til dbt
 
-## Installasjon
-
-Vent til følgende melding kommer opp nederst i høyre hjørnet og trykk på `Install dbt core`.
-
-![](./img/step-1.png)
-
-Velg versjon `1.9` i menyen som dukker opp ca. midt på skjermen.
-
-![](./img/step-2.png)
-
-Velg duckb i menyen som dukker opp ca. midt på skjermen.
-
-![](./img/step-3.png)
-
-Vent til installasjonen er ferdig. Installasjonen er ferdig når indikatoren nederst i høyre hjørnet forsvinner.
-
-![](./img/step-4.png)
-
-Alle andre popups nederst i hjørnet hjørnet kan du ignorere.
-
 ## Ditt første bygg av prosjektet
 
 Gå inn i prosjektmappen.
