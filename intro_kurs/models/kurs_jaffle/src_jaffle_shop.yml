@@ -6,6 +6,11 @@ sources:
     tables:
       - name: orders
         description: alle ordrene
+        freshness:
+          warn_after: 
+            count: 1
+            period: day
+        loaded_at_field: "CAST(order_date AS TIMESTAMP)"
       - name: customers
         description: kundene våre
         columns:
