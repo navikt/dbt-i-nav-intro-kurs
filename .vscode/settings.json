@@ -45,5 +45,14 @@
             "database": "dev.duckdb"
         }
     ],
-    "dbcode.connections": [],
+    "dbcode.connections": [
+        {
+            "name": "DuckDB",
+            "accessMode": "Read Only",
+            "previewLimit": 50,
+            "driver": "DuckDB",
+            "databaseFilePath": "dev.duckdb"
+        }
+    ],
+    "terminal.integrated.sendKeybindingsToShell": true
 }

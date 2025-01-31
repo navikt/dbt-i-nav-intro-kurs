@@ -3,7 +3,7 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "RandomFractalsInc.duckdb-sql-tools",
+                "Evidence.sqltools-duckdb-driver",
                 "innoverio.vscode-dbt-power-user",
                 "ms-python.isort",
                 "ms-python.black-formatter",
@@ -12,5 +12,6 @@
             ]
         }
     },
-    "postCreateCommand": "pipx install dbt-core dbt-duckdb"
+    "updateContentCommand": "bash .devcontainer/post-create.sh",
+    "postCreateCommand": ""
 }

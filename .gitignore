@@ -2,5 +2,5 @@
 .mypy_cache
 logs
 .DS_Store
-.gitignore
-.vscode
+node_modules
+package-lock.json

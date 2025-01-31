@@ -1,26 +1,14 @@
 # Intro til dbt
 
-## Installasjon
-
-```shell
-python -m venv .venv && source /workspaces/dbt-i-nav-intro-kurs/.venv/bin/activate &&  pip install -r /workspaces/dbt-i-nav-intro-kurs/requirements.txt
-```
-
 ## Ditt første bygg av prosjektet
 
-Gå inn i prosjektmappen
-
-#### Unix/macOS
+Gå inn i prosjektmappen.
 
 ```shell
 cd intro_kurs
 ```
 
-#### Windows
-
-*comming soon*
-
-Bygg prosjektet:
+Bygg prosjektet.
 
 ```shell
 dbt build
