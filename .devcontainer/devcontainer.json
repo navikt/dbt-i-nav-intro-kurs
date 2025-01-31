@@ -7,7 +7,8 @@
                 "ms-python.isort",
                 "ms-python.black-formatter",
                 "ms-python.python",
-                "redhat.vscode-yaml"
+                "redhat.vscode-yaml",
+                "dbcode.dbcode"
             ]
         }
     },

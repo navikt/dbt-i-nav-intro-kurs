@@ -52,5 +52,14 @@
     "python.createEnvironment.trigger": "off",
     "extensions.ignoreRecommendations": true,
     "redhat.telemetry.enabled": false,
-    "terminal.integrated.sendKeybindingsToShell": true
+    "terminal.integrated.sendKeybindingsToShell": true,
+    "dbcode.connections": [
+        {
+            "connectionId": "k0IBkp-YCmikd5PO0pG9K",
+            "name": "dev.duckdb",
+            "driver": "duckdb",
+            "socket": "/workspaces/dbt-i-nav-intro-kurs/dev.duckdb",
+            "connectionType": "socket"
+        }
+    ]
 }
