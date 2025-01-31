@@ -1,0 +1,5 @@
+.venv
+.mypy_cache
+logs
+.DS_Store
+.gitignore
