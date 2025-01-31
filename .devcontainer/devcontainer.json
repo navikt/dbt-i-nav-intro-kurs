@@ -3,7 +3,6 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "Evidence.sqltools-duckdb-driver",
                 "innoverio.vscode-dbt-power-user",
                 "ms-python.isort",
                 "ms-python.black-formatter",

@@ -11,7 +11,23 @@
         "black"
     ],
     "yaml.schemas": {
-        "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/dbt_project.json": "dbt/dbt_project.yml"
+        "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/dbt_yml_files.json": [
+            "/*.yml",
+            "!profiles.yml",
+            "!dbt_project.yml",
+            "!packages.yml",
+            "!selectors.yml",
+            "!profile_template.yml"
+        ],
+        "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/dbt_project.json": [
+            "dbt_project.yml"
+        ],
+        "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/selectors.json": [
+            "selectors.yml"
+        ],
+        "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/packages.json": [
+            "packages.yml"
+        ]
     },
     "python.testing.pytestArgs": [
         "--ignore=dbt",
@@ -32,19 +48,9 @@
     },
     "dbt.enableNewLineagePanel": true,
     "dbt.perspectiveTheme": "Vintage",
-    "sqltools.useNodeRuntime": true,
     "dbt.enableCollaboration": false,
     "python.createEnvironment.trigger": "off",
     "extensions.ignoreRecommendations": true,
     "redhat.telemetry.enabled": false,
-    "sqltools.connections": [
-        {
-            "name": "DuckDB",
-            "accessMode": "Read Only",
-            "previewLimit": 50,
-            "driver": "DuckDB",
-            "databaseFilePath": "dev.duckdb"
-        }
-    ],
-    "terminal.integrated.sendKeybindingsToShell": true,
+    "terminal.integrated.sendKeybindingsToShell": true
 }

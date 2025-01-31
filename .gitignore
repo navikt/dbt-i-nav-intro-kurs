@@ -2,6 +2,5 @@
 .mypy_cache
 logs
 .DS_Store
-*.duckdb
 node_modules
 package-lock.json
