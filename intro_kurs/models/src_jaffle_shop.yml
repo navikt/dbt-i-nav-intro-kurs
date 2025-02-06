@@ -1,0 +1,20 @@
+sources:
+  - name: jaffle_alle
+    description: treningdatabase duckdb
+    database: dev
+    schema: main
+    tables:
+      - name: orders
+        description: alle ordrene
+      - name: customers
+        description: kundene våre
+        columns:
+        - name: customer_id
+          description: Primary key
+          tests:
+            - unique
+            - not_null
+      - name: payment
+        description: betalinger utført
+      - name: Person
+        description: Alle personen som kjøper
