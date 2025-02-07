@@ -1,9 +1,9 @@
 -- Husk å sette riktig database og schema før du kjører denne spørringen
 
-drop table if exists dim_customer_tmp
+drop view if exists dim_customer_tmp
 ;
 
-create table dim_customer_tmp as
+create view dim_customer_tmp as
 
 with
 
@@ -38,8 +38,8 @@ select *
 from final
 ;
 
-drop table if exists dim_customer
+drop view if exists dim_customer
 ;
 
-alter table dim_customer_tmp rename to dim_customer
+alter view dim_customer_tmp rename to dim_customer
 ;
