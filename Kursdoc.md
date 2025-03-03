@@ -102,7 +102,7 @@ sources:
       - name: customers
         description: kundene våre
         columns:
-        - name: customer_id
+        - name: id
           description: Primary key
           tests:
             - unique
@@ -170,7 +170,7 @@ sources:
       - name: customers
         description: kundene våre
         columns:
-        - name: customer_id
+        - name: id
           description: Primary key
           tests:
             - unique
