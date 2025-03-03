@@ -60,13 +60,8 @@ Deretter kjører du dette med følgende kommando:
 
 Lag en file i *staging* mappen som heter *stg_customers.sql*
 ```
- {{
-   config(
-     materialized = 'view'
-     )
- }}
 with customers_stg as (
-  select * from dev.customers
+  select * from jaffle_shop.customers
 )
 
 select * from customers_stg
@@ -77,13 +72,8 @@ Deretter kjører du dette med følgende kommando:
 Vi lager også *stg_orders.sql* ved å legge inn følgende kode:
 
 ```
- {{
-   config(
-     materialized = 'view'
-     )
- }}
 with orders_stg as (
-  select * from dev.orders
+  select * from jaffle_shop.orders
 )
 select * from orders_stg
 ```
@@ -105,7 +95,7 @@ sources:
   - name: jaffle_alle
     description: treningdatabase duckdb
     database: dev
-    schema: main
+    schema: jaffle_shop
     tables:
       - name: orders
         description: alle ordrene
@@ -117,19 +107,17 @@ sources:
           tests:
             - unique
             - not_null
+  - name: stripe
+    database: dev
+    schema: stripe
+    tables:
       - name: payment
         description: betalinger utført
-      - name: Person
-        description: Alle personen som kjøper
+
 ```
 Endre filen *stg_customers* til:
 
 ```
-{{
-   config(
-     materialized = 'view'
-     )
- }}
 with customers_stg as (
   select * from {{ source('jaffle_alle', 'customers') }}
 )
@@ -145,11 +133,6 @@ Deretter kjører du dette med følgende kommando:
 Vi gjør det samme for *stg_orders.sql* vi endrer til følgende:
 
 ```
- {{
-   config(
-     materialized = 'view'
-     )
- }}
 with orders as (
   select * from {{ source('jaffle_alle', 'orders') }}
 )
@@ -175,7 +158,7 @@ sources:
   - name: jaffle_alle
     description: treningdatabase duckdb
     database: dev
-    schema: main
+    schema: jaffle_shop
     tables:
       - name: orders
         description: alle ordrene
@@ -192,10 +175,13 @@ sources:
           tests:
             - unique
             - not_null
+  - name: stripe
+    database: dev
+    schema: stripe
+    tables:
       - name: payment
         description: betalinger utført
-      - name: Person
-        description: Alle personen som kjøper
+
 ```
 
 Kjør dbt kommandoen `dbt source freshness`. Du skal nå få en warn melding,siden det er mere en en dag gamle data, når du kjører dette.
@@ -206,50 +192,34 @@ Kjør dbt kommandoen `dbt source freshness`. Du skal nå få en warn melding,sid
 Lag en file *fak_customer_orders.sql* i *model/marts* folderen. Følgende SQL skal ligge der
 
 ```
-{{
-  config(
-    materialized = 'view'
+with
+    customers as (select * from {{ ref("stg_customers") }}),
+    orders as (select * from {{ ref("stg_orders") }}),
+    customer_orders as (
+        select
+            customer_id,
+            min(ordered_at) as first_order_date,
+            max(ordered_at) as most_recent_order_date,
+            count(order_id) as number_of_orders
+        from orders
+        group by customer_id
+
+    ),
+
+    final as (
+
+        select
+            customers.customer_id,
+            customers.name,
+            customer_orders.first_order_date,
+            customer_orders.most_recent_order_date,
+            coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+        from customers
+        left join customer_orders on customers.customer_id = customer_orders.customer_id
     )
-}}
 
-with customers as
-(
-    select
-        customer_id,
-        first_name as name
-    from {{ref('stg_customers')}}
-),
-orders as (
-    select
-        id as order_id,
-        user_id as customer_id,
-        order_date as ordered_at
-    from {{ref('stg_orders')}}
-),
-customer_orders as (
-    select
-        customer_id,
-        min(ordered_at) as first_order_date,
-        max(ordered_at) as most_recent_order_date,
-        count(order_id) as number_of_orders
-    from orders
-    group by customer_id
-
-),
-
-final as (
-
-    select
-        customers.customer_id,
-        customers.name,
-        customer_orders.first_order_date,
-        customer_orders.most_recent_order_date,
-        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
-    from customers
-    left join customer_orders on customers.customer_id = customer_orders.customer_id
-)
-
-select * from final
+select *
+from final
 
 ```
 
