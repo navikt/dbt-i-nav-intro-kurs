@@ -1,13 +1,13 @@
 # dbt grunnleggende konsepter - kurs med øvinger
 
-**Forutsettinger**
+## Forutsettinger
 1. Må ha en github konto og den må være koblet til organisasjon NAV-IKT
 2. Må ha egen laptop
 3. Bør helst deltatt på kurset "hva er dbt"
 
-**Oppgaver**
+## Oppgaver
 
-**Øvelse 1:  - bygg din første modell**.
+### Øvelse 1:  - bygg din første modell
 
 Lag en file *dim_customer.sql* i *model* folderen. Følgende SQL skal ligge der
 
@@ -56,7 +56,7 @@ select * from final
 Deretter kjører du dette med følgende kommando:
 `dbt run --select dim_customer` eller bruk PowerUser.
 
-**Øvelse 2:  - lage staging modell av Customers og Orders**.
+### Øvelse 2:  - lage staging modell av Customers og Orders
 
 Lag en file i *staging* mappen som heter *stg_customers.sql*
 ```
@@ -86,7 +86,7 @@ Kontroller i databasen at stg_orders og stg_customers er opperettet, sjekk også
 **Gratulerer du har når laget dine 2 første staging komponenter i dbt.**
 
 
-**Øvelse 3:  - legge inn sources i en yml file, kjør stg_customers**
+### Øvelse 3:  - legge inn sources i en yml file, kjør stg_customers
 
 Lag en file i *staging* mappen som heter *src_jaffle_shop.yml*
 
@@ -148,7 +148,7 @@ Sjekk gjerne i databasen eller bruk PowerUser.
 Hurra - du ha nå brukt source som funksjon for å lage stg_orders komponent.
 
 
-**Øvelse 4:  - legge inn source freshness test av kildene**
+### Øvelse 4:  - legge inn source freshness test av kildene
 
 Her skal vi legge inn freshness test av kildene, vi legger inn følgende  i filen *src_jaffle_shop.yml*.
 Vi skal sørge for at det kommer inn data hvert døgn i Orders tabellen.
@@ -187,7 +187,7 @@ sources:
 Kjør dbt kommandoen `dbt source freshness`. Du skal nå få en warn melding,siden det er mere en en dag gamle data, når du kjører dette.
 
 
-**Øvelse 5:  - bygg en fakt_modell som bruker ref-funksjonen**.
+### Øvelse 5:  - bygg en fakt_modell som bruker ref-funksjonen
 
 Lag en file *fak_customer_orders.sql* i *model/marts* folderen. Følgende SQL skal ligge der
 
@@ -225,9 +225,10 @@ from final
 
 Deretter kjører du dette med følgende kommando: `dbt run --select +fak_customer_orders`
 
-**Øvelse 6:  - legge inn tester og dokumenterer modellen og noen felter**.
+### Øvelse 6:  - legge inn tester og dokumenterer modellen og noen felter
 
 Lag en yml file *mdl_jaffle_shop.yml* i øverste folder ( samme som sources yml filen). Følgende skal ligger der:
+
 ```
 version: 2
 
