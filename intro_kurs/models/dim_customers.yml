@@ -1,0 +1,8 @@
+models:
+  - name: dim_customers
+    description: 'A table of unique customers'
+    columns:
+      - name: customer_id
+        description: 'A unique identifier for the customer'
+        data_tests:
+          - unique
