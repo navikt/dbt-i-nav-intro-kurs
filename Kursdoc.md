@@ -139,9 +139,6 @@ with orders_stg as (
   from {{ source('jaffle_alle', 'orders') }}
 )
 
-select * from orders_stg
-
-
 select * from orders
 ```
 
