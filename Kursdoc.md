@@ -133,9 +133,13 @@ Deretter kjører du dette med følgende kommando:
 Vi gjør det samme for *stg_orders.sql* vi endrer til følgende:
 
 ```
-with orders as (
-  select * from {{ source('jaffle_alle', 'orders') }}
+with orders_stg as (
+  select id as order_id, user_id, order_date as ordered_at, _etl_loaded_at 
+  from {{ source('jaffle_alle', 'orders') }}
 )
+
+select * from orders_stg
+
 
 select * from orders
 ```
