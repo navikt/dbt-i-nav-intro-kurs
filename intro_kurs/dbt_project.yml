@@ -34,6 +34,5 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   intro_kurs:
-    # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+    # Config indicated by + and applies to all files under models/
+    +materialized: view
