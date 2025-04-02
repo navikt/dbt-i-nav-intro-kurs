@@ -139,7 +139,7 @@ with orders_stg as (
   from {{ source('jaffle_alle', 'orders') }}
 )
 
-select * from orders
+select * from orders_stg
 ```
 
 Deretter kjører du dette med følgende kommando:
@@ -229,7 +229,7 @@ Deretter kjører du dette med følgende kommando: `dbt run --select +fak_custome
 
 ### Øvelse 6:  - legge inn tester og dokumenterer modellen og noen felter
 
-Lag en yml file *mdl_jaffle_shop.yml* i øverste folder ( samme som sources yml filen). Følgende skal ligger der:
+Lag en yml file *mdl_jaffle_shop.yml* i staging ( samme som sources yml filen). Følgende skal ligger der:
 
 ```
 version: 2
