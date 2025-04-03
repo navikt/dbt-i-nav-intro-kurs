@@ -120,7 +120,7 @@ Endre filen *stg_customers* til:
 ```
 with customers_stg as (
   select id as customer_id, first_name, last_name, first_name  || ' ' || last_name as name
-   from {{ source('jaffle_alle', 'customers')}}
+   from {{ source( ... )}}
 )
 
 select * from customers_stg
@@ -136,7 +136,7 @@ Vi gjør det samme for *stg_orders.sql* vi endrer til følgende:
 ```
 with orders_stg as (
   select id as order_id, user_id, order_date as ordered_at, _etl_loaded_at 
-  from {{ source('jaffle_alle', 'orders') }}
+  from {{ source( ... ) }}
 )
 
 select * from orders_stg
@@ -195,8 +195,8 @@ Lag en file *fak_customer_orders.sql* i *model/marts* folderen. Følgende SQL sk
 
 ```
 with
-    customers as (select * from {{ ref("stg_customers") }}),
-    orders as (select * from {{ ref("stg_orders") }}),
+    customers as (select * from , {{ ... }}),
+    orders as (select * from {{ ... }}),
     customer_orders as (
         select
             customer_id,
