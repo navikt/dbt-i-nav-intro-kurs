@@ -6,10 +6,12 @@ Velkommen til det interaktive dbt selvstudiet! Dette kurset er designet for oppd
 
 ### 📚 Hovedmateriell
 - **[📖 Selvstudie-guide](SELVSTUDIE_GUIDE.md)** - Din hovedreise gjennom dbt-konseptene
-- **[� Modell-oversikt](MODELL_OVERSIKT.md)** - Visuell guide til prosjektstrukturen
-- **[�📋 Progresjon & Sjekklister](PROGRESJON_SJEKKLISTE.md)** - Følg din fremgang og sett mål
+- **[📊 Modell-oversikt](MODELL_OVERSIKT.md)** - Visuell guide til prosjektstrukturen
+- **[⚡ Quick Reference](QUICK_REFERENCE.md)** - Hurtigreferanse for kommandoer og syntaks
+- **[📋 Progresjon & Sjekklister](PROGRESJON_SJEKKLISTE.md)** - Følg din fremgang og sett mål
 - **[🧠 Quiz & Refleksjon](QUIZ_REFLEKSJON.md)** - Test forståelsen og reflekter over læringen
 - **[🎮 Utfordringsoppgaver](UTFORDRINGSOPPGAVER.md)** - Ekstra øvelser for dypere læring
+- **[🚨 Feilsøking](FEILSOKING.md)** - Løsninger på vanlige problemer
 
 ### 📖 Originalt kursmateriale  
 - **[Kursdoc.md](Kursdoc.md)** - Originale øvelser og oppgaver
