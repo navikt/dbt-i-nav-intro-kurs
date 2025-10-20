@@ -357,16 +357,56 @@ Nå skal du oppdage kraften i `{{ ref() }}` funksjonen.
 - [ ] Hvordan vet dbt hvilke modeller som må kjøres først?
 
 #### 🧪 Oppdater fak_customer_orders.sql
+
+**Steg 1: Opprett marts-mappen**
+```bash
+mkdir -p models/marts
+```
+
+**Steg 2: Lag modellen**
+
+Opprett `models/marts/fak_customer_orders.sql`:
+
 ```sql
--- Sammenlign disse to tilnærmingene:
+with
+    customers as (
+        select * from {{ ref('stg_customers') }}
+    ),
+    orders as (
+        select * from {{ ref('stg_orders') }}
+    ),
+    customer_orders as (
+        select
+            customer_id,
+            min(ordered_at) as first_order_date,
+            max(ordered_at) as most_recent_order_date,
+            count(order_id) as number_of_orders
+        from orders
+        group by customer_id
+    ),
+    final as (
+        select
+            customers.customer_id,
+            customers.name,
+            customer_orders.first_order_date,
+            customer_orders.most_recent_order_date,
+            coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+        from customers
+        left join customer_orders 
+            on customers.customer_id = customer_orders.customer_id
+    )
 
--- Gammel måte:
--- from jaffle_shop.customers
+select * from final
+```
 
--- Ny måte:  
--- from {{ ref('stg_customers') }}
+**Steg 3: Kjør med avhengigheter**
 
--- Din oppgave: Oppdater hele modellen til å bruke ref()
+```bash
+# Kjør modellen MED alle avhengigheter (upstream)
+dbt run --select +fak_customer_orders
+
+# Se hva som ble kjørt
+dbt ls --select +fak_customer_orders
 ```
 
 #### 💡 Test avhengigheter
@@ -393,23 +433,63 @@ dbt run --select +fak_customer_orders+ # Og her?
 
 #### 🧪 Lag `mdl_jaffle_shop.yml`
 
-**Utfordringsoppgave:**
-Se på dine modeller og tenk:
-1. Hvilke felter ALDRI kan være null?
-2. Hvilke felter ALLTID skal være unike?
-3. Hvilke forretningsregler skal alltid holde?
+**Før du starter: Tenk over hva som skal testes**
+- Hvilke felter kan ALDRI være null?
+- Hvilke felter skal ALLTID være unike?
+- Hvilke forretningsregler må holde?
+
+**Opprett filen `models/staging/mdl_jaffle_shop.yml`:**
 
 ```yaml
 version: 2
 
 models:
+  - name: stg_orders
+    description: "Alle ordrene fra kildesystemet, klargjort for videre bruk"
+    columns:
+      - name: order_id
+        description: "Ordre-ID som er unik og kan ikke være null"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Referanse til kunde"
+        tests:
+          - not_null
+          
   - name: stg_customers
-    description: # TODO: Beskriv hva modellen gjør
+    description: "Alle kundene som bestiller varer"
     columns:
       - name: customer_id
-        description: # TODO
+        description: "Kunde-ID må være unik og kan ikke være null"
         tests:
-          # TODO: Hvilke tester er relevante?
+          - unique
+          - not_null
+      - name: name
+        description: "Fullt navn på kunden"
+        tests:
+          - not_null
+```
+
+**Kjør testene:**
+```bash
+# Test alle modeller
+dbt test
+
+# Test bare staging-modeller
+dbt test --select staging
+
+# Test en spesifikk modell med avhengigheter
+dbt test --select +fak_customer_orders
+```
+
+**Feilsøk hvis tester feiler:**
+```bash
+# Få mer detaljert output
+dbt test --select stg_customers --debug
+
+# Se hvilke rader som feilet
+dbt test --select stg_customers --store-failures
 ```
 
 #### ❓ Test og lær
@@ -418,20 +498,125 @@ dbt test --select +fak_customer_orders
 ```
 
 **Hvis tester feiler:**
-- [ ] Hva forteller feilmeldingen deg?
-- [ ] Hvordan kan du fikse det?
-- [ ] Er det data-problemet eller test-problemet?
+- [ ] Les feilmeldingen nøye - den forteller deg hva som er galt
+- [ ] Sjekk hvilken test som feiler (unique, not_null, etc.)
+- [ ] Undersøk dataene for å finne årsaken
+- [ ] Fiks enten testen eller datalogikken
+
+**Vanlige feil og løsninger:**
+
+1. **"FAIL unique test"** 
+   - Betyr: Du har duplikater
+   - Fiks: Finn duplikatene med `SELECT ..., COUNT(*) GROUP BY ... HAVING COUNT(*) > 1`
+
+2. **"FAIL not_null test"**
+   - Betyr: Du har NULL-verdier
+   - Fiks: Sjekk `WHERE <kolonne> IS NULL` og håndter dem
+
+3. **Test feiler på freshness**
+   - Betyr: Data er eldre enn forventet
+   - Dette er OK i øvelsesdata - du kan justere terskelverdiene
+
+---
+
+## 🔧 Feilsøking og debugging
+
+### Nyttige kommandoer når noe går galt
+
+**Kompilere uten å kjøre:**
+```bash
+dbt compile --select dim_customer
+# Sjekk compiled SQL i target/compiled/
+```
+
+**Se SQL før den kjøres:**
+```bash
+dbt show -s dim_customer --limit 5
+```
+
+**Få mer detaljert output:**
+```bash
+dbt run --select dim_customer --debug
+```
+
+**Sjekk avhengigheter:**
+```bash
+# Se alle modeller som dim_customer avhenger av
+dbt ls --select +dim_customer
+
+# Se alle modeller som avhenger av stg_customers  
+dbt ls --select stg_customers+
+```
+
+**Rydd opp og start på nytt:**
+```bash
+dbt clean
+dbt deps  # Hvis du bruker packages
+dbt run
+```
+
+### Visualiser ditt arbeid med dbt docs
+
+**Generer dokumentasjon:**
+```bash
+dbt docs generate
+dbt docs serve
+```
+
+Dette åpner en interaktiv webside hvor du kan:
+- 📊 Se alle modeller og deres dokumentasjon
+- 🔗 Utforske datalineage (hvem bruker hva)
+- 📝 Lese kolonnebeskrivelser
+- 🧪 Se hvilke tester som finnes
+
+**Utforsk lineage-grafen:**
+- Klikk på en modell (f.eks. `fak_customer_orders`)
+- Se hvordan data flyter fra sources → staging → marts
+- Forstå avhengigheter visuelt
 
 ---
 
 ## 🎉 Avslutning og refleksjon
 
-### Hva har du oppdaget?
-- [ ] Hvilke dbt-konsepter var mest overraskende?
-- [ ] Hvordan vil du strukturere et dbt-prosjekt fra scratch?
-- [ ] Hvilke spørsmål har du fortsatt?
+### 🏆 Hva har du oppnådd?
 
-### Neste steg
+Gratulerer! Du har nå:
+- ✅ Bygget dine første dbt-modeller
+- ✅ Forstått staging-konseptet og kildeabstraksjon
+- ✅ Implementert sources og ref() funksjoner
+- ✅ Satt opp datakvalitetstesting
+- ✅ Dokumentert dine modeller
+- ✅ Utforsket datalineage
+
+### 🤔 Refleksjonsspørsmål
+
+**Teknisk forståelse:**
+- [ ] Kan du forklare forskjellen på `source()` og `ref()` med egne ord?
+- [ ] Hvorfor er staging-lag viktig i et dbt-prosjekt?
+- [ ] Når ville du brukt `table` vs `view` materialisering?
+
+**Praktisk anvendelse:**
+- [ ] Hvordan ville du strukturert et dbt-prosjekt fra scratch?
+- [ ] Hvilke tester er mest kritiske å implementere først?
+- [ ] Hvordan vil du bruke dbt i ditt eget arbeid?
+
+### 📊 Sjekk ditt arbeid
+
+**Verifiser at alt fungerer:**
+```bash
+# Kjør alt fra scratch
+dbt clean
+dbt run
+dbt test
+dbt docs generate
+```
+
+**Forventet resultat:**
+- Alle modeller kjører uten feil
+- Alle tester passerer (eller du forstår hvorfor de feiler)
+- Dokumentasjon genereres korrekt
+
+### 🎯 Neste steg
 - Utforsk dbt dokumentasjon: `dbt docs generate && dbt docs serve`
 - Eksperimenter med egne data
 - Bli med i dbt community!

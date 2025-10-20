@@ -6,7 +6,8 @@ Velkommen til det interaktive dbt selvstudiet! Dette kurset er designet for oppd
 
 ### 📚 Hovedmateriell
 - **[📖 Selvstudie-guide](SELVSTUDIE_GUIDE.md)** - Din hovedreise gjennom dbt-konseptene
-- **[📋 Progresjon & Sjekklister](PROGRESJON_SJEKKLISTE.md)** - Følg din fremgang og sett mål
+- **[� Modell-oversikt](MODELL_OVERSIKT.md)** - Visuell guide til prosjektstrukturen
+- **[�📋 Progresjon & Sjekklister](PROGRESJON_SJEKKLISTE.md)** - Følg din fremgang og sett mål
 - **[🧠 Quiz & Refleksjon](QUIZ_REFLEKSJON.md)** - Test forståelsen og reflekter over læringen
 - **[🎮 Utfordringsoppgaver](UTFORDRINGSOPPGAVER.md)** - Ekstra øvelser for dypere læring
 
@@ -15,10 +16,31 @@ Velkommen til det interaktive dbt selvstudiet! Dette kurset er designet for oppd
 
 ## 🏃‍♂️ Quick Start
 
-1. **Start her:** [SELVSTUDIE_GUIDE.md](SELVSTUDIE_GUIDE.md)
-2. **Følg progresjon:** [PROGRESJON_SJEKKLISTE.md](PROGRESJON_SJEKKLISTE.md)  
-3. **Test deg selv:** [QUIZ_REFLEKSJON.md](QUIZ_REFLEKSJON.md)
-4. **Utfordre deg:** [UTFORDRINGSOPPGAVER.md](UTFORDRINGSOPPGAVER.md)
+### For deg som vil komme i gang raskt:
+
+**Steg 1: Klon og sett opp**
+```bash
+git clone <repo-url>
+cd dbt-i-nav-intro-kurs/intro_kurs
+```
+
+**Steg 2: Velg din læringssti**
+
+**🎯 Strukturert selvstudie (anbefalt for nye):**
+1. Start med [SELVSTUDIE_GUIDE.md](SELVSTUDIE_GUIDE.md)
+2. Følg [PROGRESJON_SJEKKLISTE.md](PROGRESJON_SJEKKLISTE.md)
+3. Test deg selv med [QUIZ_REFLEKSJON.md](QUIZ_REFLEKSJON.md)
+
+**⚡ Hands-on øvinger (for erfarne):**
+1. Gå direkte til [Kursdoc.md](Kursdoc.md)
+2. Utfordre deg med [UTFORDRINGSOPPGAVER.md](UTFORDRINGSOPPGAVER.md)
+
+**Steg 3: Verifiser oppsett**
+```bash
+cd intro_kurs
+dbt --version
+dbt debug
+```
 
 ## ⏱️ Estimert tidsbruk
 - **Grunnleggende gjennomgang:** 2-3 timer
