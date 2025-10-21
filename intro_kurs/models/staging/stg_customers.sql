@@ -1,10 +1,12 @@
-with customers_stg as (
-    select 
-        id as customer_id,
-        first_name,
-        last_name,
-        first_name || ' ' || last_name as name
-    from jaffle_shop.customers
-)
+with
+    customers_stg as (
+        select
+            id as customer_id,
+            first_name,
+            last_name,
+            first_name || ' ' || last_name as name
+        from {{ source("jaffle_alle", "customers") }}
+    )
 
-select * from customers_stg
+select *
+from customers_stg

@@ -1,0 +1,27 @@
+sources:
+  - name: jaffle_alle
+    description: Treningsdatabase DuckDB
+    database: dev
+    schema: jaffle_shop
+    tables:
+      - name: orders
+        description: Alle ordrene
+        freshness:
+          warn_after:
+            count: 1
+            period: day
+        loaded_at_field: "CAST(order_date AS TIMESTAMP)"
+      - name: customers
+        description: Kundene våre
+        columns:
+          - name: id
+            description: Primary key
+            tests:
+              - unique
+              - not_null
+  - name: stripe
+    database: dev
+    schema: stripe
+    tables:
+      - name: payment
+        description: Betalinger utført

@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Alle ordrene fra kildesystemet, klargjort for videre bruk"
+    columns:
+      - name: order_id
+        description: "Ordre-ID som er unik og kan ikke være null"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Referanse til kunde"
+        tests:
+          - not_null
+          
+  - name: stg_customers
+    description: "Alle kundene som bestiller varer"
+    columns:
+      - name: customer_id
+        description: "Kunde-ID må være unik og kan ikke være null"
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: "Fullt navn på kunden"
+        tests:
+          - not_null
