@@ -67,6 +67,14 @@ SELECT * FROM jaffle_shop.customers LIMIT 5;
 SELECT * FROM jaffle_shop.orders LIMIT 5;
 ```
 
+**Verifiser i databasen:**
+```bash
+# I VS Code terminal eller DuckDB CLI
+duckcli dev.duckdb
+# Kjør:
+SELECT * FROM jaffle_shop.customers LIMIT 5;
+```
+
 **Refleksjonsspørsmål:**
 - [ ] Hvilke felter ser du i hver tabell?
 - [ ] Hvordan kan disse tabellene kobles sammen?
@@ -144,7 +152,7 @@ dbt show -s dim_customer
 **Verifiser i databasen:**
 ```bash
 # I VS Code terminal eller DuckDB CLI
-duckdb dev.duckdb
+duckcli dev.duckdb
 # Kjør:
 SELECT * FROM main.dim_customer ORDER BY number_of_orders DESC LIMIT 5;
 ```
