@@ -529,6 +529,8 @@ dbt test --select +fak_customer_orders
 
 ## 🔧 Feilsøking og debugging
 
+Hvis du sitter fast er det bare å spørre i [#dbt-i-nav](https://nav-it.slack.com/archives/C0377V3DDUM) eller ta kontakt med Espen Holtebu, Eivind André Holen, Stig Mange Henriksen eller Patrick Pedersen.
+
 ### Nyttige kommandoer når noe går galt
 
 **Kompilere uten å kjøre:**
