@@ -175,7 +175,7 @@ Se på `dim_customer.sql` du nettopp laget.
 
 #### 🔍 Oppdag staging-mønsteret
 Les dette sitatet fra dbt-dokumentasjonen:
-> "Staging models are the foundation of your project"
+> "[Staging: Preparing our atomic building blocks](https://docs.getdbt.com/best-practices/how-we-structure/2-staging)"
 
 **Før du lager staging-modeller, tenk:**
 - [ ] Hva er forskjellen på "rå data" og "klargjort data"?
@@ -359,10 +359,10 @@ dbt source freshness
 #### 🔄 Refaktorer dim_customer
 Nå skal du oppdage kraften i `{{ ref() }}` funksjonen.
 
-**Før du starter:**
-- [ ] Hvordan kan `dim_customer` bruke staging-modellene du laget?
-- [ ] Hva skjer hvis du endrer en staging-modell?
-- [ ] Hvordan vet dbt hvilke modeller som må kjøres først?
+**Her lærer du om:**
+- [ ] Hvordan kan `dim_customer` bruke staging-modellene du laget
+- [ ] Hva skjer hvis du endrer en staging-modell
+- [ ] Hvordan vet dbt hvilke modeller som må kjøres først
 
 #### 🧪 Oppdater fak_customer_orders.sql
 
