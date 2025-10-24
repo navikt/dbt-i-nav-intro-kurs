@@ -21,7 +21,7 @@ Velkommen til det interaktive dbt selvstudiet! Dette kurset er designet for oppd
 **Steg 1: Starte Codespaces og selvstudiet**
 
 1. Gå til repositoriet på GitHub
-2. Bytt til selv_studie branch først (dropdown øverst til venstre)
+2. Bytt til **selv_studie** branch først (dropdown øverst til venstre)
 3. Klikk på "Code" (grønn knapp)
 4. Velg "Codespaces" tab
 5. Klikk "Create codespace"
