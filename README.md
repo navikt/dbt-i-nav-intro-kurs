@@ -26,7 +26,7 @@ Velkommen til det interaktive dbt selvstudiet! Dette kurset er designet for oppd
 4. Velg "Codespaces" tab
 5. Klikk "Create codespace"
 
-Ta en kaffe mens Codespaces setter opp alt (1-2 minutter)
+Ta en kaffe mens Codespaces starter opp ca (1-2 minutter)
 Når Codespace er klar, kjør i terminalen:
 
 ```bash
