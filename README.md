@@ -13,8 +13,6 @@ Velkommen til det interaktive dbt selvstudiet! Dette kurset er designet for oppd
 - **[🎮 Utfordringsoppgaver](UTFORDRINGSOPPGAVER.md)** - Ekstra øvelser for dypere læring
 - **[🚨 Feilsøking](FEILSOKING.md)** - Løsninger på vanlige problemer
 
-### 📖 Originalt kursmateriale  
-- **[Kursdoc.md](Kursdoc.md)** - Originale øvelser og oppgaver
 
 ## 🏃‍♂️ Quick Start
 
