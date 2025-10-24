@@ -18,10 +18,19 @@ Velkommen til det interaktive dbt selvstudiet! Dette kurset er designet for oppd
 
 ### For deg som vil komme i gang raskt:
 
-**Steg 1: Klon og sett opp**
+**Steg 1: Starte Codespaces og selvstudiet**
+
+1. Gå til repositoriet på GitHub
+2. Bytt til selv_studie branch først (dropdown øverst til venstre)
+3. Klikk på "Code" (grønn knapp)
+4. Velg "Codespaces" tab
+5. Klikk "Create codespace"
+
+Ta en kaffe mens Codespaces setter opp alt (1-2 minutter)
+Når Codespace er klar, kjør i terminalen:
+
 ```bash
-git clone <repo-url>
-cd dbt-i-nav-intro-kurs/intro_kurs
+cd intro_kurs
 ```
 
 **Steg 2: Velg din læringssti**
@@ -32,8 +41,7 @@ cd dbt-i-nav-intro-kurs/intro_kurs
 3. Test deg selv med [QUIZ_REFLEKSJON.md](QUIZ_REFLEKSJON.md)
 
 **⚡ Hands-on øvinger (for erfarne):**
-1. Gå direkte til [Kursdoc.md](Kursdoc.md)
-2. Utfordre deg med [UTFORDRINGSOPPGAVER.md](UTFORDRINGSOPPGAVER.md)
+ - Utfordre deg med [UTFORDRINGSOPPGAVER.md](UTFORDRINGSOPPGAVER.md)
 
 **Steg 3: Verifiser oppsett**
 ```bash
