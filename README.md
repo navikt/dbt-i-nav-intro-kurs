@@ -104,9 +104,11 @@ dbt test --select <model_name>
 
 ## 🤝 Få hjelp
 
+Hvis du sitter fast er det bare å spørre i [#dbt-i-nav](https://nav-it.slack.com/archives/C0377V3DDUM) eller ta kontakt med Espen Holtebu, Eivind André Holen, Stig Mange Henriksen eller Patrick Pedersen.
+
 - **Spørsmål om dbt:** Sjekk [dbt dokumentasjon](https://docs.getdbt.com/)
 - **Kurs-spesifikke spørsmål:** Opprett issue i dette repositoriet
-- **Diskusjon:** Bruk team-kanaler eller Slack
+- **Diskusjon:** Bruk team-kanaler eller [#dbt-i-nav](https://nav-it.slack.com/archives/C0377V3DDUM)
 
 ## 🎉 Kom i gang!
 
