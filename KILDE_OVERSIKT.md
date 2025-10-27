@@ -63,11 +63,11 @@ dev.duckdb
 
 **Struktur:**
 ```sql
-CREATE TABLE jaffle_shop.customers (
+jaffle_shop.customers
     id BIGINT,              -- Primærnøkkel, unik kunde-ID
     first_name VARCHAR,      -- Fornavn
     last_name VARCHAR        -- Etternavn
-);
+
 ```
 
 **Datakvalitet:**
@@ -95,13 +95,12 @@ id | first_name | last_name
 
 **Struktur:**
 ```sql
-CREATE TABLE jaffle_shop.orders (
+jaffle_shop.orders
     id BIGINT,                    -- Primærnøkkel, unik ordre-ID  
     user_id BIGINT,               -- Fremmednøkkel til customers.id
     order_date DATE,               -- Bestillingsdato
     status VARCHAR,                -- Ordrestatus
     _etl_loaded_at TIMESTAMP       -- ETL metadata
-);
 ```
 
 **Datakvalitet:**
@@ -133,14 +132,13 @@ id | user_id | order_date | status    | _etl_loaded_at
 
 **Struktur:**
 ```sql
-CREATE TABLE stripe.payments (
+stripe.payments
     id BIGINT,                    -- Primærnøkkel, unik betalings-ID
     orderid BIGINT,               -- Fremmednøkkel til orders.id
     paymentmethod VARCHAR,         -- Betalingsmåte
     status VARCHAR,                -- Betalingsstatus
     amount BIGINT,                -- Beløp (i øre/cent)
     created DATE                   -- Betalingsdato
-);
 ```
 
 **Datakvalitet:**
