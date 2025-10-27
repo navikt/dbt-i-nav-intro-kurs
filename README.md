@@ -24,7 +24,7 @@ Velkommen til det interaktive dbt selvstudiet! Dette kurset er designet for oppd
 
 1. Klikk på "Code" (grønn knapp)
 2. Velg "Codespaces" tab
-3. Klikk "Create codespace"
+3. Klikk :heavy_plus_sign: "Create codespace"
 
 Ta en kaffe mens Codespaces starter opp ca (1-2 minutter)
 Når Codespace er klar, kjør i terminalen:
