@@ -60,20 +60,26 @@ dbt --help
 Du skal oppdage hvordan dbt transformerer data ved å bygge din første modell.
 
 #### 🔍 Start med utforsking
-1. Se på data i kildetabellene først:
-```sql
--- Kjør dette i duckdb eller din database
+
+Se på data i kildetabellene
+
+* jaffle_shop.customers
+* jaffle_shop.orders
+* stripe.payments
+
+En oversikt over kildedataene finner du under [Kilde-oversikt](KILDE_OVERSIKT.md). Du kan også bruke [duckcli](DUCKCLI_REFERENCE.md) til å utforske databasen `dev.duckdb` fra terminalen.
+
+**DUCKCLI:**
+```bash
+# Koble på databasen fra terminalen
+duckcli dev.duckdb
+# Kjør en spørring:
 SELECT * FROM jaffle_shop.customers LIMIT 5;
-SELECT * FROM jaffle_shop.orders LIMIT 5;
+# OBS! duckdb støtter kun en databasetilkobling av gangen, så husk å koble fra databasen når du er ferdig med utforskningen.
+exit
 ```
 
-**Verifiser i databasen:**
-```bash
-# I VS Code terminal eller DuckDB CLI
-duckcli dev.duckdb
-# Kjør:
-SELECT * FROM jaffle_shop.customers LIMIT 5;
-```
+Se [Duckcli Quick Reference](DUCKCLI_REFERENCE.md) for flere nyttige kommandoer.
 
 **Refleksjonsspørsmål:**
 - [ ] Hvilke felter ser du i hver tabell?
@@ -347,7 +353,7 @@ dbt source freshness
 3. Kjør `dbt test` - hva skjer?
 
 **Refleksjonsspørsmål:**
-- [ ] Hvorfor feilet noen tester?
+- [ ] Hvorfor får vi advarsel på freshness-testen?
 - [ ] Hvordan kan du fikse dem?
 - [ ] Hva er verdien av å teste på kildenivå?
 

@@ -6,6 +6,27 @@ Denne guiden dekker de vanligste feilene du vil møte i kurset, og hvordan du l�
 
 ---
 
+## Databasetilkobling
+
+### ❌ Feil: "Could not set lock on file"
+
+```
+Runtime Error
+  IO Error: Could not set lock on file "/workspaces/dbt-i-nav-intro-kurs/dev.duckdb": Conflicting lock is held in /usr/local/python/3.12.1/bin/python3.12 (PID 60361). See also https://duckdb.org/docs/connect/concurrency
+```
+
+**Årsak:**
+
+Du har en åpen databasetilkobling. Husk å koble fra databasen. Se [Duckcli Quick Reference](DUCKCLI_REFERENCE.md#koble-på-databasen) for mer info.
+
+**Løsning:**
+
+Finn den åpne databasetilkoblingen å lukk den.
+
+```
+exit
+```
+
 ## 📁 Filplassering og struktur
 
 ### ❌ Feil: "Model not found"
@@ -482,6 +503,7 @@ git commit -m "Add stg_customers staging model"
 
 **1. Rydd opp og start på nytt:**
 ```bash
+git restore ../dev.duckdb
 dbt clean
 dbt deps
 dbt run
