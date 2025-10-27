@@ -503,6 +503,7 @@ git commit -m "Add stg_customers staging model"
 
 **1. Rydd opp og start på nytt:**
 ```bash
+git restore ../dev.duckdb
 dbt clean
 dbt deps
 dbt run
