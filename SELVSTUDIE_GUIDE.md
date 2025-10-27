@@ -351,7 +351,7 @@ dbt source freshness
 3. Kjør `dbt test` - hva skjer?
 
 **Refleksjonsspørsmål:**
-- [ ] Hvorfor feilet noen tester?
+- [ ] Hvorfor får vi advarsel på freshness-testen?
 - [ ] Hvordan kan du fikse dem?
 - [ ] Hva er verdien av å teste på kildenivå?
 
