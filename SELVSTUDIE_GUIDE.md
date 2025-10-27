@@ -75,6 +75,8 @@ En oversikt over kildedataene finner du under [Kilde-oversikt](KILDE_OVERSIKT.md
 duckcli dev.duckdb
 # Kjør en spørring:
 SELECT * FROM jaffle_shop.customers LIMIT 5;
+# OBS! duckdb støtter kun en databasetilkobling av gangen, så husk å koble fra databasen når du er ferdig med utforskningen.
+exit
 ```
 
 Se [Duckcli Quick Reference](DUCKCLI_REFERENCE.md) for flere nyttige kommandoer.

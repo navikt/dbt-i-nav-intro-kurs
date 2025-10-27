@@ -3,6 +3,9 @@
 Her er en oversikt over de viktigste duckdb / duckcli kommanodene.
 
 ## Koble på databasen
+
+duckdb støtter kun en databasetilkobling av gangen så husk å koble fra etter du er ferdig med å utforske databasen
+
 ```bash
 duckcli <database-fil>
 ```
