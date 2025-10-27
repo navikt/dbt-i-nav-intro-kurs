@@ -5,15 +5,15 @@ Velkommen til det interaktive dbt selvstudiet! Dette kurset er designet for oppd
 ## 🎯 Kursstruktur
 
 ### 📚 Hovedmateriell
-- **[📖 Selvstudie-guide](SELVSTUDIE_GUIDE.md)** - Din hovedreise gjennom dbt-konseptene
-- **[📀 Kilde-oversikt](KILDE_OVERSIKT.md)** - Visuell guide til kildedataene
-- **[📊 Modell-oversikt](MODELL_OVERSIKT.md)** - Visuell guide til prosjektstrukturen
-- **[⚡ DBT Quick Reference](QUICK_REFERENCE.md)** - Hurtigreferanse for dbt- kommandoer og syntaks
-- **[🦆 Duckcli Quick Reference](DUCKCLI_REFERENCE.md)** - Hurtigreferanse for duck db/cli- kommandoer og syntaks
-- **[📋 Progresjon & Sjekklister](PROGRESJON_SJEKKLISTE.md)** - Følg din fremgang og sett mål
-- **[🧠 Quiz & Refleksjon](QUIZ_REFLEKSJON.md)** - Test forståelsen og reflekter over læringen
-- **[🎮 Utfordringsoppgaver](UTFORDRINGSOPPGAVER.md)** - Ekstra øvelser for dypere læring
-- **[🚨 Feilsøking](FEILSOKING.md)** - Løsninger på vanlige problemer
+- **[📖 Selvstudie-guide](kursmatrialet/SELVSTUDIE_GUIDE.md)** - Din hovedreise gjennom dbt-konseptene
+- **[📀 Kilde-oversikt](kursmatrialet/KILDE_OVERSIKT.md)** - Visuell guide til kildedataene
+- **[📊 Modell-oversikt](kursmatrialet/MODELL_OVERSIKT.md)** - Visuell guide til prosjektstrukturen
+- **[⚡ DBT Quick Reference](kursmatrialet/QUICK_REFERENCE.md)** - Hurtigreferanse for dbt- kommandoer og syntaks
+- **[🦆 Duckcli Quick Reference](kursmatrialet/DUCKCLI_REFERENCE.md)** - Hurtigreferanse for duck db/cli- kommandoer og syntaks
+- **[📋 Progresjon & Sjekklister](kursmatrialet/PROGRESJON_SJEKKLISTE.md)** - Følg din fremgang og sett mål
+- **[🧠 Quiz & Refleksjon](kursmatrialet/QUIZ_REFLEKSJON.md)** - Test forståelsen og reflekter over læringen
+- **[🎮 Utfordringsoppgaver](kursmatrialet/UTFORDRINGSOPPGAVER.md)** - Ekstra øvelser for dypere læring
+- **[🚨 Feilsøking](kursmatrialet/FEILSOKING.md)** - Løsninger på vanlige problemer
 
 
 ## 🏃‍♂️ Quick Start
@@ -38,12 +38,12 @@ cd intro_kurs
 **Steg 2: Velg din læringssti**
 
 **🎯 Strukturert selvstudie (anbefalt for nye):**
-1. Start med [SELVSTUDIE_GUIDE.md](SELVSTUDIE_GUIDE.md)
-2. Følg [PROGRESJON_SJEKKLISTE.md](PROGRESJON_SJEKKLISTE.md)
-3. Test deg selv med [QUIZ_REFLEKSJON.md](QUIZ_REFLEKSJON.md)
+1. Start med [SELVSTUDIE_GUIDE.md](kursmatrialet/SELVSTUDIE_GUIDE.md)
+2. Følg [PROGRESJON_SJEKKLISTE.md](kursmatrialet/PROGRESJON_SJEKKLISTE.md)
+3. Test deg selv med [QUIZ_REFLEKSJON.md](kursmatrialet/QUIZ_REFLEKSJON.md)
 
 **⚡ Hands-on øvinger (for erfarne):**
- - Utfordre deg med [UTFORDRINGSOPPGAVER.md](UTFORDRINGSOPPGAVER.md)
+ - Utfordre deg med [UTFORDRINGSOPPGAVER.md](kursmatrialet/UTFORDRINGSOPPGAVER.md)
 
 **Steg 3: Verifiser oppsett**
 ```bash
@@ -110,6 +110,6 @@ dbt test --select <model_name>
 
 ## 🎉 Kom i gang!
 
-Klar til å starte? Gå til **[SELVSTUDIE_GUIDE.md](SELVSTUDIE_GUIDE.md)** og begynn din dbt-reise! 
+Klar til å starte? Gå til **[SELVSTUDIE_GUIDE.md](kursmatrialet/SELVSTUDIE_GUIDE.md)** og begynn din dbt-reise! 
 
 *Lykke til! 🚀*
