@@ -10,18 +10,28 @@ duckdb støtter kun en databasetilkobling av gangen så husk å koble fra etter 
 duckcli <database-fil>
 ```
 
-eksempel:
+**Eksempel:**
+
 ```bash
 duckcli dev.duckdb
 ```
 
-## Koble fra databasen
+**Forventet output:**
 
 ```bash
+duckcli dev.duckdb 
+Version: 0.2.1
+GitHub: https://github.com/dbcli/duckcli
+dev.duckdb>
+```
+
+## Koble fra databasen
+
+```sql
 exit
 ```
 
-**Eksempel:**
+**Forventet output:**
 
 ```bash
 dev.duckdb> exit
@@ -31,11 +41,11 @@ Goodbye!
 
 ## Se databasestruktur
 
-```bash
+```sql
 show
 ```
 
-**Eksempel:**
+**Forventet output:**
 
 ```bash
 dev.duckdb> show
@@ -58,6 +68,12 @@ show <schema>.<tabell>
 
 **Eksempel:**
 
+```sql
+show jaffle_shop.customers
+```
+
+**Forventet output:**
+
 ```bash
 dev.duckdb> show jaffle_shop.customers
 +-------------+-------------+------+--------+---------+--------+
@@ -78,6 +94,12 @@ Time: 0.004s
 ```
 
 **Eksempel:**
+
+```sql
+select * from jaffle_shop.orders limit 2
+```
+
+**Forventet output:**
 
 ```bash
 dev.duckdb> select * from jaffle_shop.orders limit 2
