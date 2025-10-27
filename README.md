@@ -6,8 +6,10 @@ Velkommen til det interaktive dbt selvstudiet! Dette kurset er designet for oppd
 
 ### 📚 Hovedmateriell
 - **[📖 Selvstudie-guide](SELVSTUDIE_GUIDE.md)** - Din hovedreise gjennom dbt-konseptene
+- **[📀 Kilde-oversikt](KILDE_OVERSIKT.md)** - Visuell guide til kildedataene
 - **[📊 Modell-oversikt](MODELL_OVERSIKT.md)** - Visuell guide til prosjektstrukturen
-- **[⚡ Quick Reference](QUICK_REFERENCE.md)** - Hurtigreferanse for kommandoer og syntaks
+- **[⚡ DBT Quick Reference](QUICK_REFERENCE.md)** - Hurtigreferanse for dbt- kommandoer og syntaks
+- **[🦆 Duckcli Quick Reference](DUCKCLI_REFERENCE.md)** - Hurtigreferanse for duck db/cli- kommandoer og syntaks
 - **[📋 Progresjon & Sjekklister](PROGRESJON_SJEKKLISTE.md)** - Følg din fremgang og sett mål
 - **[🧠 Quiz & Refleksjon](QUIZ_REFLEKSJON.md)** - Test forståelsen og reflekter over læringen
 - **[🎮 Utfordringsoppgaver](UTFORDRINGSOPPGAVER.md)** - Ekstra øvelser for dypere læring

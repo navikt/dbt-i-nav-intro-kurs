@@ -1,0 +1,89 @@
+# 🦆㏈
+
+Her er en oversikt over de viktigste duckdb / duckcli kommanodene.
+
+## Koble på databasen
+```bash
+duckcli <database-fil>
+```
+
+eksempel:
+```bash
+duckcli dev.duckdb
+```
+
+## Koble fra databasen
+
+```bash
+exit
+```
+
+**Eksempel:**
+
+```bash
+dev.duckdb> exit
+Goodbye!
+@patped ➜ /workspaces/dbt-i-nav-intro-kurs (selv_studie) $ 
+```
+
+## Se databasestruktur
+
+```bash
+show
+```
+
+**Eksempel:**
+
+```bash
+dev.duckdb> show
++----------+-------------+-----------+-------------------------------------------------------------------+--------------------------------------------------------------+-----------+
+| database | schema      | name      | column_names                                                      | column_types                                                 | temporary |
++----------+-------------+-----------+-------------------------------------------------------------------+--------------------------------------------------------------+-----------+
+| dev      | jaffle_shop | customers | ['id', 'first_name', 'last_name']                                 | ['BIGINT', 'VARCHAR', 'VARCHAR']                             | False     |
+| dev      | jaffle_shop | orders    | ['ID', 'USER_ID', 'ORDER_DATE', 'STATUS', '_etl_loaded_at']       | ['BIGINT', 'BIGINT', 'DATE', 'VARCHAR', 'TIMESTAMP']         | False     |
+| dev      | stripe      | payments  | ['ID', 'ORDERID', 'PAYMENTMETHOD', 'STATUS', 'AMOUNT', 'CREATED'] | ['BIGINT', 'BIGINT', 'VARCHAR', 'VARCHAR', 'BIGINT', 'DATE'] | False     |
++----------+-------------+-----------+-------------------------------------------------------------------+--------------------------------------------------------------+-----------+
+3 rows in set
+Time: 0.032s
+```
+
+## Se kolonner i en tabell
+
+```bash
+show <schema>.<tabell>
+```
+
+**Eksempel:**
+
+```bash
+dev.duckdb> show jaffle_shop.customers
++-------------+-------------+------+--------+---------+--------+
+| column_name | column_type | null | key    | default | extra  |
++-------------+-------------+------+--------+---------+--------+
+| id          | BIGINT      | YES  | <null> | <null>  | <null> |
+| first_name  | VARCHAR     | YES  | <null> | <null>  | <null> |
+| last_name   | VARCHAR     | YES  | <null> | <null>  | <null> |
++-------------+-------------+------+--------+---------+--------+
+3 rows in set
+Time: 0.004s
+```
+
+## Kjøre sql spørring
+
+```bash
+<spørring>
+```
+
+**Eksempel:**
+
+```bash
+dev.duckdb> select * from jaffle_shop.orders limit 2
++----+---------+------------+--------+----------------------------+
+| ID | USER_ID | ORDER_DATE | STATUS | _etl_loaded_at             |
++----+---------+------------+--------+----------------------------+
+| 84 | 70      | 2018-03-26 | placed | 2021-11-19 05:21:58.564126 |
+| 86 | 68      | 2018-03-26 | placed | 2021-11-19 05:21:58.564126 |
++----+---------+------------+--------+----------------------------+
+2 rows in set
+Time: 0.004s
+```
