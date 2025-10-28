@@ -71,7 +71,12 @@ En oversikt over kildedataene finner du under [Kilde-oversikt](KILDE_OVERSIKT.md
 
 **DUCKCLI:**
 ```bash
-# Koble på databasen fra terminalen
+# Databasefilen ligger i `root-mappen` så hvis du står i `intro_kurs` må du navigere et nivå opp.
+cd ..
+# @patped ➜ /workspaces/dbt-i-nav-intro-kurs/intro_kurs (main) $ cd ..
+# @patped ➜ /workspaces/dbt-i-nav-intro-kurs (main) $
+
+# Koble på databasen fra terminalen.
 duckcli dev.duckdb
 # Kjør en spørring:
 SELECT * FROM jaffle_shop.customers LIMIT 5;
