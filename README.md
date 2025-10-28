@@ -29,9 +29,9 @@ Velkommen til det interaktive dbt selvstudiet! Dette kurset er designet for oppd
 2. Velg "Codespaces" tab
 3. Klikk :heavy_plus_sign: "Create codespace"
 
-Ta en kaffe mens Codespaces starter opp ca (1-2 minutter) mens du leser litt om utviklingsmiljøet her.
+Mens Codespaces starter opp (ca 1-2 minutter) kan du ta en kaffe og lese litt om utviklingsmiljøet 👇
 
-Codespace't som starter opp et fult utviklingsmiljø med alt du trenger for å fullføre kurset ferdig installert. Alt foregår i browseren så du trenger ikke å installere noe lokalt. Det består av en database (av typen duckdb) med [kildedata](kursmatrialet/KILDE_OVERSIKT.md), et tilhørende sql klient-verkøy ([duckcli](kursmatrialet/DUCKCLI_REFERENCE.md)) og et ferdig oppsatt dbt-prosjekt med kobling mot databasen.
+Codespace't som starter opp er et fult utviklingsmiljø med alt du trenger for å fullføre kurset. Alt foregår i browseren så du trenger ikke å installere noe lokalt. Det består av en database (av typen duckdb) med [kildedata](kursmatrialet/KILDE_OVERSIKT.md) som skal brukes under kurset ferdig lastet. Et tilhørende sql klient-verkøy ([duckcli](kursmatrialet/DUCKCLI_REFERENCE.md)) og et ferdig oppsatt dbt-prosjekt med kobling mot databasen.
 
 **Steg 2: Verifiser oppsett**
 
