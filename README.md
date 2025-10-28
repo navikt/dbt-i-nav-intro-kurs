@@ -2,6 +2,10 @@
 
 Velkommen til det interaktive dbt selvstudiet! Dette kurset er designet for oppdagelsesbasert læring hvor du lærer ved å utforske, eksperimentere og reflektere.
 
+## Forutsetninger
+- GitHub-konto koblet til NAV-IKT
+- Grunnleggende SQL-kunnskap
+
 ## 🎯 Kursstruktur
 
 ### 📚 Hovedmateriell
@@ -15,7 +19,6 @@ Velkommen til det interaktive dbt selvstudiet! Dette kurset er designet for oppd
 - **[🎮 Utfordringsoppgaver](kursmatrialet/UTFORDRINGSOPPGAVER.md)** - Ekstra øvelser for dypere læring
 - **[🚨 Feilsøking](kursmatrialet/FEILSOKING.md)** - Løsninger på vanlige problemer
 
-
 ## 🏃‍♂️ Quick Start
 
 ### For deg som vil komme i gang raskt:
@@ -26,29 +29,35 @@ Velkommen til det interaktive dbt selvstudiet! Dette kurset er designet for oppd
 2. Velg "Codespaces" tab
 3. Klikk :heavy_plus_sign: "Create codespace"
 
-Ta en kaffe mens Codespaces starter opp ca (1-2 minutter)
-Når Codespace er klar, kjør i terminalen:
+Ta en kaffe mens Codespaces starter opp ca (1-2 minutter) mens du leser litt om utviklingsmiljøet her.
+
+Codespace't som starter opp et fult utviklingsmiljø med alt du trenger for å fullføre kurset ferdig installert. Alt foregår i browseren så du trenger ikke å installere noe lokalt. Det består av en database (av typen duckdb) med [kildedata](kursmatrialet/KILDE_OVERSIKT.md), et tilhørende sql klient-verkøy ([duckcli](kursmatrialet/DUCKCLI_REFERENCE.md)) og et ferdig oppsatt dbt-prosjekt med kobling mot databasen.
+
+**Steg 2: Verifiser oppsett**
+
+Kjør følgende kommandoer i terminalen for å se at oppsettet fungerer. Hvis du ikke ser terminalen kan du åpne den med `ctrl/cmd + j`
 
 ```bash
 cd intro_kurs
-```
-
-**Steg 2: Velg din læringssti**
-
-**🎯 Strukturert selvstudie (anbefalt for nye):**
-1. Start med [SELVSTUDIE_GUIDE.md](kursmatrialet/SELVSTUDIE_GUIDE.md)
-2. Følg [PROGRESJON_SJEKKLISTE.md](kursmatrialet/PROGRESJON_SJEKKLISTE.md)
-3. Test deg selv med [QUIZ_REFLEKSJON.md](kursmatrialet/QUIZ_REFLEKSJON.md)
-
-**⚡ Hands-on øvinger (for erfarne):**
- - Utfordre deg med [UTFORDRINGSOPPGAVER.md](kursmatrialet/UTFORDRINGSOPPGAVER.md)
-
-**Steg 3: Verifiser oppsett**
-```bash
-cd intro_kurs
-dbt --version
 dbt debug
 ```
+
+Forventet output på siste linje:
+```bash
+12:29:06  All checks passed!
+```
+
+Hvis noe gikk galt, se avsnittet [Få hjelp](README.md#-f%C3%A5-hjelp)
+
+**Steg 3: Velg din læringssti**
+
+**🎯 Strukturert selvstudie (anbefalt for nye):**
+1. Start med [selvstudie](kursmatrialet/SELVSTUDIE_GUIDE.md)
+2. Følg progressjonen din med [sjekklisten](kursmatrialet/PROGRESJON_SJEKKLISTE.md)
+3. Test deg selv med [quiz](kursmatrialet/QUIZ_REFLEKSJON.md)
+
+**⚡ Hands-on øvinger (for erfarne):**
+ - Utfordre deg med [utfordringsoppgaver](kursmatrialet/UTFORDRINGSOPPGAVER.md)
 
 ## ⏱️ Estimert tidsbruk
 - **Grunnleggende gjennomgang:** 2-3 timer
@@ -66,16 +75,22 @@ Etter å ha fullført dette selvstudiet vil du:
 
 ## 🛠️ Teknisk oppsett
 
-### Forutsetninger
-- GitHub-konto koblet til NAV-IKT
-- Grunnleggende SQL-kunnskap
-- Terminal/kommandolinje tilgang
-
 ### Nyttige kommandoer
+
+**Åpne / lukke terminalvindu**
+
+```shell
+ctrl/cmd + j
+```
 
 **Gå til dbt-prosjektmappen:**
 ```shell
 cd intro_kurs
+```
+
+**Gå opp et nivå i mappestrukturen**
+```shell
+cd ..
 ```
 
 **Bygge prosjektet:**
