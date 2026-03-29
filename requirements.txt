@@ -16,7 +16,7 @@ dbt-core==1.9.2
 dbt-duckdb==1.9.1
 dbt-extractor==0.5.1
 dbt-semantic-interfaces==0.7.4
-deepdiff==7.0.1
+deepdiff==8.6.1
 duckcli==0.2.1
 duckdb==1.1.3
 idna==3.10
